@@ -1,0 +1,7 @@
+__pycache__/
+*.py[cod]
+.DS_Store
+Thumbs.db
+screenshot_*.png
+assets/teja/mask_test1.png
+assets/teja/teja_cutout.png

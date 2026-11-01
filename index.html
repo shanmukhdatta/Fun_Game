@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Jumper Teja - Gundu Man Web Game</title>
+  <meta name="description" content="Play Jumper Teja (Gundu Man), a fun web flap game with touch physics and hilarious head-burst animations!">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-container">
+    <!-- Top Site Header -->
+    <header class="site-header">
+      <div class="brand">
+        <span>Jumper Teja</span>
+        <span class="brand-badge">Gundu Man</span>
+      </div>
+      <div class="header-controls">
+        <button class="ctrl-btn" id="btnAudioToggle" title="Toggle Sound">
+          <span id="audioIcon">🔊</span>
+          <span id="audioText">Sound</span>
+        </button>
+        <button class="ctrl-btn" id="btnPauseGame" title="Pause Game">
+          <span>⏸️</span>
+          <span>Pause</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Game Stage & Canvas -->
+    <main class="stage-wrapper" id="stageWrapper">
+      <canvas id="gameCanvas" width="480" height="680" tabindex="0"></canvas>
+
+      <!-- HUD Layer -->
+      <div class="hud-layer">
+        <div class="score-display" id="hudScore">0</div>
+      </div>
+
+      <!-- Start / Ready Overlay -->
+      <div class="overlay" id="startOverlay">
+        <div class="overlay-card">
+          <img src="assets/teja/teja_avatar.png" alt="Jumper Teja Photo" class="hero-preview" id="startHeroPreview">
+          <h1 class="card-title">Jumper Teja</h1>
+          <p class="telugu-caption" lang="te">కాపాడురా నన్ను... నా గుండుని పగలకుండా! 😂</p>
+          <p class="card-desc">Save Teja’s precious gundu! Dodge flying undies and dog peda before his head goes FASAK! 😂</p>
+          <button class="primary-btn" id="btnStartGame">START FLIGHT</button>
+          <p class="controls-hint">Tap screen, click, or press Space / ↑ to flap</p>
+        </div>
+      </div>
+
+      <!-- Pause Overlay -->
+      <div class="overlay hidden" id="pauseOverlay">
+        <div class="overlay-card">
+          <h2 class="card-title">Interval.</h2>
+          <p class="telugu-caption" lang="te">విరామం · కాసేపు ఆగండి</p>
+          <p class="card-desc">Ready to continue Jumper Teja's flight?</p>
+          <button class="primary-btn" id="btnResumeGame">CONTINUE</button>
+        </div>
+      </div>
+
+      <!-- Game Over Overlay -->
+      <div class="overlay hidden" id="gameOverOverlay">
+        <div class="overlay-card">
+          <img src="assets/teja/teja_avatar.png" alt="Reaction" class="reaction-media" id="gameOverReaction">
+          <h2 class="card-title" id="gameOverTitle">Ayyo Gundu Pagilindhi! 💥</h2>
+          <p class="telugu-caption" lang="te" id="gameOverSubtitle">FASAK! 💀</p>
+
+          <div class="score-stats">
+            <div class="stat-item">
+              <span class="stat-label">Score</span>
+              <span class="stat-value" id="finalScore">0</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">Best Record</span>
+              <span class="stat-value best" id="bestScore">0</span>
+            </div>
+          </div>
+
+          <button class="primary-btn" id="btnRestartGame">PLAY AGAIN</button>
+          <p class="controls-hint">Tap screen or press Space to fly again</p>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
