@@ -23,8 +23,11 @@ To use another player's approved photos, replace the files below with new files 
 | `assets/teja/teja_hero.png` | Character during flight | Transparent PNG cutout |
 | `assets/teja/teja_head.png` | Head burst animation | Transparent PNG crop |
 | `assets/teja/teja_avatar.png` | Start and game-over cards | Square PNG avatar |
+| `assets/teja/share_preview.png` | Link preview shown when sharing the site | 1200 × 630 PNG featuring the character |
 
 The three paths are declared near the top of `game.js` as `HERO_PHOTO_SRC`, `HEAD_PHOTO_SRC`, and `AVATAR_PHOTO_SRC`.
+
+The page title, sharing text, and share-card URL are in the `<head>` section of `index.html`. After replacing the character art, run `python make_social_preview.py` to rebuild the share-card image.
 
 Replace the music files with approved audio, keeping the names and formats:
 
@@ -44,6 +47,7 @@ Only commit photos and audio that you have permission to share. Files in a publi
 - `assets/hostel/`: corridor background and obstacle art.
 - `assets/audio/`: gameplay and game-over tracks.
 - `make_hostel_assets.py`: regenerates the three hostel artwork PNGs (requires Pillow).
+- `make_social_preview.py`: regenerates the social share image from `assets/teja/teja_hero.png` (requires Pillow).
 - `make_cutout.py`, `make_head.py`, `make_avatar.py`: optional character-image preparation utilities. The cutout and head scripts take the original photo path as an argument; the head crop script is tailored to Teja's source photo.
 
 ## Free deployment with GitHub Pages
